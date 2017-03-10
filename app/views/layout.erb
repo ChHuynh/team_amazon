@@ -17,10 +17,15 @@
 
   <title></title>
 </head>
+<%if current_user%>
+<a href="/users/<%=@user.id%>"><%=@user.username%></a>
+<a href="/users/logout">logout</a>
+
+<%else%>
 <a href="/users/new">Register!</a>
 <a href="/users/login">Login</a>
-<a href="/users/logout">logout</a>
-<a href="/users">profile</a>
+<%end%>
+<a href="/users">home</a>
 <header>
 </header>
 <body>
