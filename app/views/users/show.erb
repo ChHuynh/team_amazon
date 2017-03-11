@@ -1,0 +1,22 @@
+<h1> hello <%=@user.username%></h1>
+
+<h2>your scores</h2>
+<p>
+<%@user.games.each do |game|%>
+  <%=game.deck.name%>
+  <br>
+  points: <%=game.points%>
+  guesses: <%=game.guesses%>
+  <br>
+  <br>
+<%end%>
+</p>
+<h3>Flashcard Decks</h3>
+  <%@decks.each do |deck|%>
+  <ul>
+    <li>
+      <a href="/decks/<%=deck.id%>/cards"> <%=deck.name%> </a>
+    </li>
+  </ul>
+  <%end%>
+

@@ -1,0 +1,9 @@
+
+
+<h1><%=@card.deck.name%></h1>
+<p><%=@card.question %></p>
+
+<form action="/decks/<%=@card.deck.id%>/cards/<%=@card.id%>" method="POST">
+  <input type="text" name="user[answer]">
+  <input type="submit" value="submit">
+</form>
