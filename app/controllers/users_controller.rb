@@ -8,7 +8,6 @@ get "/users/new" do
 end
 
 post '/users' do
-
   @user = User.new(params[:user])
   if @user.save
     login(@user)
@@ -35,14 +34,15 @@ end
 
 get "/users/logout" do
 logout
-redirect "/"
+redirect "/decks"
 end
 
 get "/users/:id" do
   if current_user
+    @decks = Deck.all
     erb :"users/show"
   else
-    redirect "/"
+    redirect "/decks"
   end
 end
 

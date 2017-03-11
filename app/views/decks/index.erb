@@ -1,12 +1,15 @@
 <h1>Flashcards</h1>
 
+<%if current_user%>
 <h3>Flashcard Decks</h3>
-
-<%@decks.each do |deck|%>
-<ul>
-  <li>
-    <a href="/decks/<%=deck.id%>/cards"> <%=deck.name%> </a>
-  </li>
-</ul>
+  <%@decks.each do |deck|%>
+  <ul>
+    <li>
+      <a href="/decks/<%=deck.id%>/cards"> <%=deck.name%> </a>
+    </li>
+  </ul>
+  <%end%>
+  <%else%>
+   <p>please login or register an account to play</p>
 <%end%>
 

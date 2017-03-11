@@ -1,4 +1,5 @@
 get '/decks' do
+
   @decks = Deck.all
   @decks.each do |deck|
   deck.cards.each do |card|
