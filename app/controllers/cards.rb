@@ -9,7 +9,7 @@ get '/decks/:deck_id/cards' do
 
   if !@cards.unguessed_cards.empty?
     @cards = @cards.unguessed_cards
-    @card = @cards.first
+    @card = @cards.shuffle.first
     redirect :"/decks/#{@deck.id}/cards/#{@card.id}"
   elsif !@cards.incorrectly_answered_cards.empty?
     @cards = @cards.incorrectly_answered_cards
